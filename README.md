@@ -1,16 +1,9 @@
-# AngularJS Phone Catalog Tutorial Application
+# Angular Phone Catalog Tutorial Application
 
 
 ## Overview
 
-This application takes the developer through the process of building a web-application using
-AngularJS. The application is loosely based on the **Google Phone Gallery**, which no longer exists.
-Here is a historical reference: [Google Phone Gallery on WayBack][google-phone-gallery]
-
-Each tagged commit is a separate lesson teaching a single aspect of the framework.
-
-The full tutorial can be found at https://docs.angularjs.org/tutorial.
-
+Picking up where the AngularJS tutorial left off and going through the steps to convert to Angular 2+
 
 ## Prerequisites
 
@@ -36,140 +29,44 @@ The full tutorial can be found at https://docs.angularjs.org/tutorial.
 
 ## Commits / Tutorial Outline
 
-You can check out any point of the tutorial using:
+You can check out any point of the conversion using:
 
 ```
-git checkout step-?
+git checkout Astep?
 ```
 
 To see the changes made between any two lessons use the `git diff` command:
 
 ```
-git diff step-?..step-?
+git diff Astep?..Astep?
 ```
 
-### step-0 _Bootstrapping_
+### step-0/1 clone
 
-- Add the 'angular.js' script.
-- Add the `ngApp` directive to bootstrap the application.
-- Add a simple template with an expression.
+- Clone the AngularJS angular-phonecat app from https://github.com/angular/angular-phonecat
 
-### step-1 _Static Template_
+### step-2 Convert to typescript
 
-- Add a stylesheet file ('app/app.css').
-- Add a static list with two phones.
+- Convert the .js files of the project to .ts.
+- Add typescript: npm i typescript --save-dev
+- Add tsc:w to package.json scripts
+- Add types to package.json: 
+  npm install @types/jasmine @types/angular  @types/angular-animate @types/angular-cookies @types/angular-mocks @types/angular-resource @types/angular-route @types/angular-sanitize --save-dev
+- Add tsconfig.json file.
 
-### step-2 _Angular Templates_
+### step-3 
 
-- Convert the static phone list to dynamic by:
-  - Creating a `PhoneListController` controller.
-  - Extracting the data from HTML into the controller as an in-memory dataset.
-  - Converting the static document into a template with the use of the `ngRepeat` directive.
-- Add a simple unit test for the `PhoneListController` controller to show how to write tests and
-  run them using Karma.
+### step-4 
 
-### step-3 _Components_
+### step-5 
 
-- Introduce components.
-- Combine the controller and the template into a reusable, isolated `phoneList` component.
-- Refactor the application and tests to use the `phoneList` component.
+### step-6 
 
-### step-4 _Directory and File Organization_
+### step-7 
 
-- Refactor the layout of files and directories, applying best practices and techniques that will
-  make the application easier to maintain and expand in the future:
-  - Put each entity in its own file.
-  - Organize code by feature area (instead of by function).
-  - Split code into modules that other modules can depend on.
-  - Use external templates in `.html` files (instead of inline HTML strings).
+### step-8 
 
-### step-5 _Filtering Repeaters_
-
-- Add a search box to demonstrate:
-  - How the data-binding works on input fields.
-  - How to use the `filter` filter.
-  - How `ngRepeat` automatically shrinks and grows the number of phones in the view.
-- Add an end-to-end test to:
-  - Show how end-to-end tests are written and used.
-  - Prove that the search box and the repeater are correctly wired together.
-
-### step-6 _Two-way Data Binding_
-
-- Add an `age` property to the phone model.
-- Add a drop-down menu to control the phone list order.
-- Override the default order value in controller.
-- Add unit and end-to-end tests for this feature.
-
-### step-7 _XHR & Dependency Injection_
-
-- Replace the in-memory dataset with data loaded from the server (in the form of a static
-  'phone.json' file to keep the tutorial backend agnostic):
-  - The JSON data is loaded using the `$http` service.
-- Demonstrate the use of `services` and `dependency injection` (DI):
-  - `$http` is injected into the controller through DI.
-  - Introduce DI annotation methods: `.$inject` and inline array
-
-### step-8 _Templating Links & Images_
-
-- Add a phone image and links to phone pages.
-- Add an end-to-end test that verifies the phone links.
-- Tweak the CSS to style the page just a notch.
-
-### step-9 _Routing & Multiple Views_
-
-- Introduce the `$route` service, which allows binding URLs to views for routing and deep-linking:
-  - Add the `ngRoute` module as a dependency.
-  - Configure routes for the application.
-  - Use the `ngView` directive in 'index.html'.
-- Create a phone list route (`/phones`):
-  - Map `/phones` to the existing `phoneList` component.
-- Create a phone detail route (`/phones/:phoneId`):
-  - Map `/phones/:phoneId` to a new `phoneDetail` component.
-  - Create a dummy `phoneDetail` component, which displays the selected phone ID.
-  - Pass the `phoneId` parameter to the component's controller via `$routeParams`.
-
-### step-10 _More Templating_
-
-- Implement fetching data for the selected phone and rendering to the view:
-  - Use `$http` in `PhoneDetailController` to fetch the phone details from a JSON file.
-  - Create the template for the detail view.
-- Add CSS styles to make the phone detail page look "pretty-ish".
-
-### step-11 _Custom Filters_
-
-- Implement a custom `checkmark` filter.
-- Update the `phoneDetail` template to use the `checkmark` filter.
-- Add a unit test for the `checkmark` filter.
-
-### step-12 _Event Handlers_
-
-- Make the thumbnail images in the phone detail view clickable:
-  - Introduce a `mainImageUrl` property on `PhoneDetailController`.
-  - Implement the `setImage()` method for changing the main image.
-  - Use `ngClick` on the thumbnails to register a handler that changes the main image.
-  - Add an end-to-end test for this feature.
-
-### step-13 _REST and Custom Services_
-
-- Replace `$http` with `$resource`.
-- Create a custom `Phone` service that represents the RESTful client.
-- Use a custom Jasmine equality tester in unit tests to ignore irrelevant properties.
-
-### step-14 _Animations_
-
-- Add animations to the application:
-  - Animate changes to the phone list, adding, removing and reordering phones with `ngRepeat`.
-  - Animate view transitions with `ngView`.
-  - Animate changes to the main phone image in the phone detail view.
-- Showcase three different kinds of animations:
-  - CSS transition animations.
-  - CSS keyframe animations.
-  - JavaScript-based animations.
-
-
-## Development with `angular-phonecat`
-
-The following docs describe how you can test and develop this application further.
+### step-9 
 
 ### Installing Dependencies
 
