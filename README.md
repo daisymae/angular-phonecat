@@ -55,6 +55,12 @@ git diff Astep?..Astep?
 - Add tsconfig.json file.
 
 ### step-3 
+- Additional configurations
+- Add latest Angular and other new dependencies to package.json
+- Add systemjs.config.js
+- move index.html to root from /app directory.
+- Add <base href> to index.html
+- Add Angular polyfills and SystemJS config to the end of the head section and use System.import to load the actual application.
 
 ### step-4 
 
