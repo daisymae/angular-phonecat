@@ -20,7 +20,7 @@ AppModule = __decorate([
         imports: [
             platform_browser_1.BrowserModule,
             static_1.UpgradeModule
-        ],
+        ]
     })
 ], AppModule);
 exports.AppModule = AppModule;

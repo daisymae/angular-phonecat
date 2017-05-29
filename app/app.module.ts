@@ -6,7 +6,7 @@ import { UpgradeModule } from '@angular/upgrade/static';
   imports: [
     BrowserModule,
       UpgradeModule
-  ],
+  ]
 })
 export class AppModule {
     ngDoBootstrap() {}
